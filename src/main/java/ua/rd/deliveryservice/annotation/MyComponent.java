@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  * @author obriukhovych
  */
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(value = RetentionPolicy.RUNTIME)
 public @interface MyComponent {
     
 }
