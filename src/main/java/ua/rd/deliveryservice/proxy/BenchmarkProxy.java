@@ -8,17 +8,17 @@ package ua.rd.deliveryservice.proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import ua.rd.deliveryservice.annotation.BanchMark;
+import ua.rd.deliveryservice.annotation.Benchmark;
 
 /**
  *
  * @author obriukhovych
  */
-public class BanchMarkProxy {
+public class BenchmarkProxy {
 
     private Object realObject;
 
-    public BanchMarkProxy(Object realObject) {
+    public BenchmarkProxy(Object realObject) {
         this.realObject = realObject;
     }
 
@@ -26,7 +26,7 @@ public class BanchMarkProxy {
         Class<?>[] interfaceTypes = realObject.getClass().getInterfaces();
         Method[] methods = realObject.getClass().getMethods();
         for (Method method : methods) {
-            if (method.isAnnotationPresent(BanchMark.class)) {
+            if (method.isAnnotationPresent(Benchmark.class)) {
                 return createProxy();
             }
         }
@@ -43,7 +43,7 @@ public class BanchMarkProxy {
                 Object returnValue = null;
                 Method[] realMethods = realObject.getClass().getMethods();
                 for (Method realMethod : realMethods) {
-                    if (realMethod.getName().equals(method.getName()) && realMethod.isAnnotationPresent(BanchMark.class)) {
+                    if (realMethod.getName().equals(method.getName()) && realMethod.isAnnotationPresent(Benchmark.class)) {
                         long time = System.nanoTime();
                         returnValue = method.invoke(realObject, args);
                         System.out.println("BanchMark for method" + method.getName() + " of class " + realObject.getClass().getSimpleName());

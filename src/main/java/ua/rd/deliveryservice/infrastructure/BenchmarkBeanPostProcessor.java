@@ -4,12 +4,9 @@
  * and open the template in the editor.
  */
 package ua.rd.deliveryservice.infrastructure;
-import ua.rd.deliveryservice.proxy.BanchMarkProxy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
-import java.lang.reflect.Method;
-import ua.rd.deliveryservice.proxy.BenchmarkProxyFactory;
 /**
  *
  * @author obriukhovych
