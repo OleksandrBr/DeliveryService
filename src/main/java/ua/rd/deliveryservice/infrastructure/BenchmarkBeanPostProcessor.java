@@ -6,6 +6,7 @@
 package ua.rd.deliveryservice.infrastructure;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import ua.rd.deliveryservice.proxy.BenchmarkProxyFactory;
 
 /**
  *
