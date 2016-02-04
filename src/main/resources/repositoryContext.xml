@@ -4,11 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean name="pizzaFactoryBean" class="ua.rd.deliveryservice.infrastructure.PizzaFactoryBean">
+<!--    <bean name="pizzaFactoryBean" class="ua.rd.deliveryservice.infrastructure.PizzaFactoryBean">
         <property name="id" value="1"/>
         <property name="name" value="Sea"/>
         <property name="type" value="SEA"/>
@@ -45,6 +46,16 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <constructor-arg value="Name1"/>
     </bean>
     <bean id = "orderRepo" class="ua.rd.deliveryservice.repository.InMemOrderRepository" />
-    <bean id = "customerRepo" class="ua.rd.deliveryservice.repository.InMemCustomerRepository"/>
+    <bean id = "customerRepo" class="ua.rd.deliveryservice.repository.InMemCustomerRepository"/>-->
+    
+    <bean name="pizzaFactoryBean" class="com.lab.delivery.tools.infrastructure.PizzaFactoryBean">
+        <property name="id" value="1"/>
+        <property name="name" value="Sea"/>
+        <property name="pizzaType" value="SEA"/>
+        <property name="price" value="120"/>
+    </bean>
+
+    <context:component-scan base-package="com.lab.delivery.repository">
+    </context:component-scan>
    
 </beans>

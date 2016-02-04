@@ -5,17 +5,18 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byType">
     
     
-    
+<!--    
     
     <bean id="orderService"  class="ua.rd.deliveryservice.service.SimpleOrderService" autowire="constructor">
-<!--        <constructor-arg>
+                <constructor-arg>
             <ref bean="orderRepo" />
         </constructor-arg>        
-        <constructor-arg ref="pizzaService" />-->
+        <constructor-arg ref="pizzaService" />
         <property name="order">
             <bean class="ua.rd.deliveryservice.domain.Order" scope="prototype"/>
         </property>
@@ -41,6 +42,14 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
                 <constructor-arg value="Kyiv"/>        
             </bean>
         </property>
-    </bean>    
-    
+    </bean>    -->
+
+    <import resource="repositoryContext.xml"/>
+
+    <bean class="ua.rd.deliveryservice.infrastructure.BenchmarkBeanPostProcessor"/>
+    <context:component-scan base-package="ua.rd.deliveryservice.service">
+    </context:component-scan>
+    <context:component-scan base-package="ua.rd.deliveryservice.domain">
+        <context:include-filter type="annotation" expression="ua.rd.deliveryservice.annotation.MyComponent"/>
+    </context:component-scan>    
 </beans>

@@ -14,5 +14,5 @@ import ua.rd.deliveryservice.domain.Customer;
 public interface CustomerService {
     void giveCard(Customer customer);
     Customer addSumToCard(Customer customer, int sum);
-    Customer createCustomer(int id, String name);
+    Customer createCustomer(int id, String name, Integer card);
 }

@@ -35,7 +35,7 @@ public class SimpleCustomerService implements CustomerService {
         return customerRepository.update(customer);
     }
 
-    public Customer createCustomer(int id, String name) {
-        return new Customer(id, name);
+    public Customer createCustomer(int id, String name, Integer card) {
+        return new Customer(id, name, card);
     }
 }

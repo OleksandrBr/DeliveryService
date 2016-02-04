@@ -14,9 +14,10 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer id, String name) {
+    public Customer(Integer id, String name, Integer card) {
         this.id = id;
         this.name = name;
+        this.card = card;
     }
 
     public Customer(String name) {
