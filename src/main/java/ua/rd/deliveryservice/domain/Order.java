@@ -80,7 +80,7 @@ public class Order {
             throw new TooManyPizzasException() {
                 @Override
                 public String getMessage() {
-                    return "Order can't has more then " + MAX_PIZZAS_IN_ORDER + " pizzas";
+                    return "Order can't more than " + MAX_PIZZAS_IN_ORDER + " pizzas";
                 }
             };
         }
@@ -125,6 +125,11 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" + "id=" + id + ", pizzas=" + pizzas + ", customer=" + customer + '}';
+               return "Order{" +
+                "id=" + id +
+                ", customer=" + customer +
+                ", pizzas=" + pizzas +
+                ", status=" + status +
+                '}';
     }
 }
