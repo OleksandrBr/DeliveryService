@@ -48,14 +48,14 @@
     <bean id = "orderRepo" class="ua.rd.deliveryservice.repository.InMemOrderRepository" />
     <bean id = "customerRepo" class="ua.rd.deliveryservice.repository.InMemCustomerRepository"/>-->
     
-    <bean name="pizzaFactoryBean" class="com.lab.delivery.tools.infrastructure.PizzaFactoryBean">
+    <bean name="pizzaFactoryBean" class="ua.rd.deliveryservice.infrastructure.PizzaFactoryBean">
         <property name="id" value="1"/>
         <property name="name" value="Sea"/>
-        <property name="pizzaType" value="SEA"/>
+        <property name="type" value="SEA"/>
         <property name="price" value="120"/>
     </bean>
 
-    <context:component-scan base-package="com.lab.delivery.repository">
+    <context:component-scan base-package="ua.rd.deliveryservice.repository">
     </context:component-scan>
    
 </beans>
